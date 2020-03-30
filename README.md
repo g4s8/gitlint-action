@@ -14,7 +14,7 @@ with this content:
 name: Git linter
 "on": [push, pull_request]
 jobs:
-  check:
+  gitlint:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
