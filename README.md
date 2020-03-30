@@ -19,10 +19,10 @@ jobs:
     steps:
       - name: Check out the code
         # checkout code before linting
-        uses: actions/checkout@v2        
+        uses: actions/checkout@v2
       - name: Lint
         # run linter (use latest version here)
-        uses: g4s8/gitlint-action@0.1
+        uses: g4s8/gitlint-action@0.2
         with:
           # see `inputs` section for more details
           since: "2020-03-30"
