@@ -20,8 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: 'gitlint'
+name: 'gitlinter'
 description: 'Git linter GitHub action'
+branding:
+  icon: alert-triangle
+  color: orange
 inputs:
   pattern:
     description: 'Commits pattern'
