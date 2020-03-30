@@ -9,4 +9,3 @@ RUN apk --update --no-cache --virtual=bdeps add curl && \
 
 RUN apk --no-cache add git
 
-ENTRYPOINT "gitlint"

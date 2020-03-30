@@ -35,6 +35,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - 'gitlint'
     - '--path=/github/home'
     - '--subject-regex="${{ inputs.pattern }}"'
     - '--since="${{ inputs.since }}"'
