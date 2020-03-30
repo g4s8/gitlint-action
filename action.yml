@@ -36,6 +36,6 @@ runs:
   image: 'Dockerfile'
   args:
     - 'gitlint'
-    - '--path=${GITHUB_WORKSPACE}'
+    - '--path=${{ GITHUB_WORKSPACE }}'
     - '--subject-regex="${{ inputs.pattern }}"'
     - '--since="${{ inputs.since }}"'
