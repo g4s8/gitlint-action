@@ -29,4 +29,4 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v2
       - name: Lint
-        uses: g4s8/gitlint-action@master
+        uses: g4s8/gitlint-action@0.1
