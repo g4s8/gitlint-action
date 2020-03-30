@@ -8,4 +8,3 @@ RUN apk --update --no-cache --virtual=bdeps add curl && \
   cd && rm -fr /tmp/build && apk del --no-cache bdeps
 
 RUN apk --no-cache add git
-
