@@ -31,11 +31,12 @@ inputs:
     description: 'Start date'
     required: true
     default: '1970-01-01'
+outputs:
+  errors:
+    description: 'Amount of errors'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - 'gitlint'
-    - '--path=${{ GITHUB_WORKSPACE }}'
-    - '--subject-regex="${{ inputs.pattern }}"'
-    - '--since="${{ inputs.since }}"'
+    - "${{ inputs.pattern }}"
+    - "${{ inputs.since }}"
