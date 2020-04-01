@@ -20,26 +20,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: 'gitlinter'
-description: 'Git linter GitHub action'
-branding:
-  icon: alert-triangle
-  color: orange
-inputs:
-  pattern:
-    description: 'Commits pattern'
-    required: true
-    default: '\(?#\d+\)? - .+'
-  since:
-    description: 'Start date'
-    required: true
-    default: '1970-01-01'
-outputs:
-  errors:
-    description: 'Amount of errors'
-runs:
-  using: 'docker'
-  image: 'g4s8/gitlint-action:0.3'
-  args:
-    - "${{ inputs.pattern }}"
-    - "${{ inputs.since }}"
+name: Push docker image
+"on":
+  release:
+    types:
+      - created
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish to registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: g4s8/gitlint-action
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tag_names: true

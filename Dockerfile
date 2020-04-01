@@ -1,5 +1,8 @@
 FROM alpine:3.11
 
+LABEL "repository"="https://github.com/g4s8/gitlint-action"
+LABEL "maintainer"="Kirill Che."
+
 RUN apk --update --no-cache --virtual=bdeps add curl && \
   mkdir /tmp/build && cd /tmp/build && \
   curl -s -L https://raw.githubusercontent.com/llorllale/go-gitlint/master/download-gitlint.sh > download-gitlint.sh && \
@@ -9,6 +12,6 @@ RUN apk --update --no-cache --virtual=bdeps add curl && \
 RUN apk --no-cache add git
 
 WORKDIR /w
-COPY ./script.sh entry.sh
+COPY ./entry.sh entry.sh
 
 ENTRYPOINT ["/w/entry.sh"]
