@@ -39,7 +39,7 @@ outputs:
     description: 'Amount of errors'
 runs:
   using: 'docker'
-  image: 'g4s8/gitlint-action:0.3'
+  image: 'docker://g4s8/gitlint-action:0.3.1'
   args:
     - "${{ inputs.pattern }}"
     - "${{ inputs.since }}"
