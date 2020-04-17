@@ -20,6 +20,9 @@ jobs:
       - name: Check out the code
         # checkout code before linting
         uses: actions/checkout@v2
+        with:
+          # fetch 20 commits (increase it if needed)
+          fetch-depth: '20'
       - name: Lint
         # run linter (use latest version here)
         uses: g4s8/gitlint-action@0.2
